@@ -1,3 +1,13 @@
+BEGIN Added in Bahai repository only
+
+Forked from https://github.com/nginxinc/docker-nginx
+
+This repo was forked in order to maintain some custom instructions in [modules\Dockerfile.alpine](modules\Dockerfile.alpine).
+
+See [modules\README.md](modules\README.md) for more information.
+
+END Added in Bahai repository only
+
 # About this Repo
 
 This is the Git repo of the official Docker image for [nginx](https://registry.hub.docker.com/_/nginx/). See the

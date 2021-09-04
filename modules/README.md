@@ -1,3 +1,27 @@
+BEGIN Added in Bahai repository only
+
+Run the following command:
+```
+cd modules
+
+docker build --build-arg ENABLED_MODULES="subs-filter" -t nginx-alpine-with-subs-filter:latest -f Dockerfile.alpine .
+```
+
+Add a tag for with the version number. The version number should be one of the last steps in the last stage of the build (e.g. `[state-1 5/5] RUN echo NGINX_VERSION=1.21.1`):
+```
+docker tag nginx-alpine-with-subs-filter:latest nginx-alpine-with-subs-filter:1.21.1
+```
+
+Then push to a repository. For example, to push to the **benrobot** account on docker hub use the following commands:
+```
+docker tag nginx-alpine-with-subs-filter:latest benrobot/nginx-alpine-with-subs-filter:latest
+docker tag nginx-alpine-with-subs-filter:1.21.1 benrobot/nginx-alpine-with-subs-filter:1.21.1
+
+docker push --all-tags benrobot/nginx-alpine-with-subs-filter
+```
+
+END Added in Bahai repository only
+
 # Adding third-party modules to nginx official image
 
 It's possible to extend a mainline image with third-party modules either from

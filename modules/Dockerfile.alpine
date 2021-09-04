@@ -68,3 +68,8 @@ RUN set -ex \
            apk add --no-cache --allow-untrusted /tmp/packages/nginx-module-${module}-${NGINX_VERSION}*.apk; \
        done \
     && rm -rf /tmp/packages
+
+# BEGIN Added in Bahai repository only
+COPY nginx.conf /etc/nginx/
+RUN echo NGINX_VERSION=$NGINX_VERSION
+# END Added in Bahai repository only
